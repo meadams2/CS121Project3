@@ -10,7 +10,7 @@ The goal of this project is to build a procedural horse-race game in C++. The ma
 
 ## Main Function
 
-Initialize the horses. In this case, we assume an array of 5 integers, each with values from 0-15.Each "horse" will start at 0.  
+Initialize the horses. In this case, we assume an array of 5 integers, each with values from 0-14.Each "horse" will start at 0.  
 
 ```
 
