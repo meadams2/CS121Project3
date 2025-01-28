@@ -13,7 +13,7 @@ The goal of this project is to build a procedural horse-race game in C++. The ma
 Initialize the horses. In this case, we assume an array of 5 integers, each with values from 0-14.Each "horse" will start at 0.  
 
 ```
-
+Constant LANE_LENGTH 
 horses = [0, 0, 0, 0, 0]
 
 ```
@@ -21,15 +21,14 @@ horses = [0, 0, 0, 0, 0]
 Initialize while loop with keepGoing sentry.
 
 ```
+keepGoing = true
 while keepGoing:
-	if <ENTER>:
-		for i in horses:
-			advance()
-			printLane
-			isWinner()
-	if isWinner() is true:
-		Print "<Winning Horse> wins!"
-		keepGoing = False
+	for i in horses:
+		advance()
+		printLane
+		if isWinner() is true:
+			print("<HorseNum> wins!")
+			keepGoing = false
 ```
 
 ## Advance Function
@@ -64,7 +63,7 @@ Prints out the current horse's entire lane as dots, but with the horse number in
 Each lane has 15 possible positions (0-14). 0 is the start line and 15 is the finish line. 
 
 ```
-For each possible position:
+From 0 to LANE_LENGTH:
 	If horse in position:
 		print(horseNum)
 	Else:
