@@ -5,7 +5,7 @@ const int LANE_LENGTH = 15;
 const int NUM_HORSES = 5;
 void advance(int horseNum, int* horses);
 void printLane(int horseNum, int* horses);
-//bool isWinner(int horseNum, int* horses);
+bool isWinner(int horseNum, int* horses);
 
 std::random_device rd;
 std::uniform_int_distribution<int> dist(0, 1);
@@ -14,11 +14,19 @@ int main(){
 	int horses[]= {0, 0, 0, 0, 0};
 //	int horseNum = 1;
 //	advance(horseNum, horses);
-	for (int i = 0; i < NUM_HORSES; i++){
-		int& horseNum = i; 
-		advance(horseNum, horses);
-		printLane(horseNum, horses);
-	}//End for loop
+	bool keepGoing = true;
+	while (keepGoing){
+		for (int i = 0; i < NUM_HORSES; i++){
+			int& horseNum = i; 
+			advance(horseNum, horses);
+			printLane(horseNum, horses);
+			if (isWinner(horseNum, horses)){
+				keepGoing = false;
+			}
+		}//End for loop
+		std::cout << "Press ENTER to continue";
+		std::cin.ignore();
+	}//End while loop
 	return 0;
 }//End main
 
@@ -45,3 +53,15 @@ void printLane(int number, int* array){
 	std::cout << std::endl;
 } //End printLane
 
+bool isWinner(int number, int* array){
+	bool winner = false;
+	if (array[number] > LANE_LENGTH){
+		winner = true;
+		std::cout << number << "wins!";
+		std::cout << std::endl;
+	}
+	else{
+		winner = false;
+	}//End condition
+	return winner;
+}//End isWinner()
