@@ -34,14 +34,14 @@ void advance(int number, int* array){
 
 void printLane(int number, int* array){
 //	const int LANE_LENGTH = 15;
-	for (int i = 0; i > LANE_LENGTH; i++){
+	for (int i = 0; i < LANE_LENGTH; i++){
 		if (i == array[number]){
 			std::cout << number;
 		}
 		else {
 			std::cout << ".";
 		} //end condition
-		std::cout << std::endl;
 	} //end for loop
+	std::cout << std::endl;
 } //End printLane
 
