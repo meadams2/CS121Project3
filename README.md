@@ -2,6 +2,10 @@
 
 The goal of this project is to build a procedural horse-race game in C++. The main focuses of this project are to become more comfortable with the basics of C++ such as I/O, conditions, loops, data types, and randomization. 
 
+## Progress
+
+Code working as of 5:37 pm 1/31/2025. Fully functional program in "final" executable file. 
+
 ## Needed Functions
 
 - advance() flips a coin using randomization and either moves the current horse or doesn't. The function is a void and will return nothing. 
