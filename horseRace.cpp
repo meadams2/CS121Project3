@@ -1,17 +1,19 @@
 # include <iostream>
 # include <random>
 
-const LANE_LENGTH = 15
+//const int LANE_LENGTH = 15;
 void advance(int horseNum, int* horses);
 void printLane(int horseNum, int* horses);
 //bool isWinner(int horseNum, int* horses);
 
 int main(){
-	int horses = [0, 0, 0, 0, 0];
+	int horses[]= {0, 0, 0, 0, 0};
+//	int horseNum = 1;
+//	advance(horseNum, horses);
 	for (int i = 0; horses[i]; i++){
-		horseNum& = horses[i];
-		advance(horseNum, int* horses);
-		printLane(horseNum, int* horses);
+		int& horseNum = i; 
+		advance(horseNum, horses);
+		printLane(horseNum, horses);
 	}//End for loop
 	return 0;
 }//End main
@@ -23,17 +25,20 @@ void advance(int number, int* array){
 	std::cout << coin << std::endl;
 	if(coin == 1){
 		array[number]++;
+		//std::cout << array[number] << std::endl;
 	} //End if
+
 }//End advance
 
 void printLane(int number, int* array){
-	for (int i = 0; i < LANE_LENGTH; i++){
+	const int LANE_LENGTH = 15;
+	for (int i = 0; i > LANE_LENGTH; i++){
 		if (i == array[number]){
 			std::cout << number;
 		}
 		else {
 			std::cout << '.';
-		}
-	}// end for loop
-	std::cout << std::endl;
-}// End printLane
+		} //end condition
+	} //end for loop 
+} //End printLane
+
